@@ -1,32 +1,65 @@
-﻿@using BE
-@model List<CurrencyPair>  
-
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real-Time Trading Data</title>
+    <!-- Bootstrap CSS link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+    </style>
+    <script>
+        // Reload the page every two seconds
+        setInterval(function () {
+            location.reload();
+        }, 2000); // 2000 milliseconds = 2 seconds
+    </script>
 </head>
 <body>
-    <h1>Real-Time Trading Data</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Pair Name</th>
-                <th>Min Value</th>
-                <th>Max Value</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var pair in Model)
-            {
+    <div class="container">
+        <h1 class="text-center">Real-Time Trading Data</h1>
+
+        <table class="table table-bordered">
+            <thead>
                 <tr>
-                    <td>@pair.PairName</td>
-                    <td>@pair.MinValue</td>
-                    <td>@pair.MaxValue</td>
+                    <th>Pair Name</th>
+                    <th>Min Value</th>
+                    <th>Max Value</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var pair in Model)
+                {
+                    <tr>
+                        <td>@pair.PairName</td>
+                        <td>@pair.MinValue</td>
+                        <td>@pair.MaxValue</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
