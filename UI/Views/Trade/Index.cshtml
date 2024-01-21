@@ -1,0 +1,32 @@
+﻿@using BE
+@model List<CurrencyPair>  
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-Time Trading Data</title>
+</head>
+<body>
+    <h1>Real-Time Trading Data</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Pair Name</th>
+                <th>Min Value</th>
+                <th>Max Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pair in Model)
+            {
+                <tr>
+                    <td>@pair.PairName</td>
+                    <td>@pair.MinValue</td>
+                    <td>@pair.MaxValue</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

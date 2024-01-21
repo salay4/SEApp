@@ -8,7 +8,7 @@ using BE;
 namespace DataLayer
 {
     // DAL: DataAccessLayer project
-    public class DataRepository
+    public class DataRepository : IDataRepositoryProvider
     {
         private readonly AppDbContext _context;
 
@@ -40,8 +40,6 @@ namespace DataLayer
             }
         }
 
-
-
         public async Task LoadDataAsync()
         {
             // Load data from the Currency and CurrencyPair tables if needed
@@ -51,13 +49,9 @@ namespace DataLayer
             // Perform further operations as needed
         }
 
-
-        // Add function to save the minimum and maximum values of the trading pair
         public async Task SaveCurrencyPairMinMaxValueAsync(string pairName, decimal minValue, decimal maxValue)
         {
             await UpdateCurrencyPairMinMaxValueAsync(pairName, minValue, maxValue);
         }
-
-
     }
 }
