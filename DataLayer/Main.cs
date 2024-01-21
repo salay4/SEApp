@@ -43,6 +43,26 @@ namespace DataLayer
             {
                 Console.WriteLine($"Currency: {currency.CurrencyName}, Abbreviation: {currency.CurrencyAbbreviation}");
             }
+
+
+            // Call GetCurrencies
+            var currencyPairs = await dataRepository.GetCurrencyPairsAsync();
+
+            // Display currencies
+            Console.WriteLine("CurrencyPair:");
+            foreach (var currencyPair in currencyPairs)
+            {
+                Console.WriteLine($"PairName: {currencyPair.PairName}," +
+                    $" MinValue: {currencyPair.MinValue}," +
+                    $" MaxValue: {currencyPair.MaxValue},"
+                );
+            }
+
+
+
+
+
+
         }
     }
 }
