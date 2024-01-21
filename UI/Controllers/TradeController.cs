@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using BLL;
-using System.Threading.Tasks;
+﻿using BLL;
+using Microsoft.AspNetCore.Mvc;
 
 namespace UI.Controllers
 {

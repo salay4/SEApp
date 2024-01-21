@@ -1,19 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using BLL; // Include the appropriate namespace
-using System.Threading.Tasks;
+﻿using BLL; // Include the appropriate namespace
 using DataLayer;
 using Microsoft.EntityFrameworkCore;
-using System.Globalization;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Mvc;
-using System.Globalization;
-using BLL;
 using SharpDX.DXGI; // Include the appropriate namespace
+using System.Globalization;
 
 
 namespace UI
@@ -88,7 +77,7 @@ namespace UI
 
             app.UseAuthorization();
 
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
