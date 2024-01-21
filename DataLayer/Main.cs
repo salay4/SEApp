@@ -58,10 +58,7 @@ namespace DataLayer
                 );
             }
 
-
-
-
-
+            await dataRepository.UpdateCurrencyPairMinMaxValueAsync("USD/ILS", (decimal)3.60, (decimal)4.10);
 
         }
     }
