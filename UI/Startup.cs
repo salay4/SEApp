@@ -3,7 +3,7 @@ using DataLayer;
 using Microsoft.EntityFrameworkCore;
 using SharpDX.DXGI; // Include the appropriate namespace
 using System.Globalization;
-using BE;
+
 
 namespace UI
 {
@@ -76,15 +76,6 @@ namespace UI
             app.UseRouting();
 
             app.UseAuthorization();
-
-            // Check and initialize tables
-            using (var scope = app.ApplicationServices.CreateScope())
-            {
-                var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-                var dataRepository = new DataRepository(dbContext);
-
-                Task.Run(async () => await dataRepository.CheckAndInitializeTablesAsync()).Wait();
-            }
 
 
             app.UseEndpoints(endpoints =>

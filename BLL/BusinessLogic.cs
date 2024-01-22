@@ -45,7 +45,7 @@ namespace BLL
         {
             // Implement logic to get a random pair name (e.g., USD/ILS, EUR/USD, GBP/ILS)
             // You can customize this based on your requirements
-            var pairNames = new[] { "USD/ILS", "EUR/USD", "GBP/ILS" };
+            var pairNames = new[] { "USD/ILS", "EUR/USD", "GBP/ILS" , "USD/GPB", "EUR/ILS", "EUR/GPB" };
             var random = new Random();
             return pairNames[random.Next(pairNames.Length)];
         }
